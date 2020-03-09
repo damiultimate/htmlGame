@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg element</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style type="text/css">
+	*{
+		padding:0;
+		margin: 0 -0.1%;
+		overflow: hidden;
+	}
+body{
+	background-image: url("cloudgame.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+	@keyframes land{
+		from{ margin-left: -0.1%; }
+		to { margin-left: -100%; }
+	}
+	@keyframes mountain{
+		from{ margin-left: -1%; }
+		to { margin-left: -115.6%; }
+	}
+	@keyframes farmountain{
+		from{ margin-left: -12.7%; }
+		to { margin-left: -103%; }
+	}
+	@keyframes trees{
+		from{ margin-left: 3%; }
+		to { margin-left: -309.5%; }
+	}
+@keyframes cloud1{
+from { margin-left: -110%; }
+to { margin-left: 110%; }
+}
+
+@keyframes cloudsparent{
+	0% { background-color: rgba(0,0,0,0.0); }
+	48%{ background-color: rgba(0,0,0,0.0); }
+	50%{ background-color: rgba(0,0,0,0.7); }
+	98%{  background-color: rgba(0,0,0,0.7); }
+
+	100% { background-color: rgba(0,0,0,0.0); }
+
+}
+@keyframes clouds{
+	0% { opacity:1; }
+	48%{ opacity: 1;}
+	50%{opacity:0;   }
+	98%{  opacity:0; }
+
+	100% { opacity: 1; }
+
+}
+
+
+@keyframes obstacle{
+	from { margin-left: 103%; }
+	to { margin-left: -103%; }
+}
+
+
+
+
+
+
+	.land,.land1{
+		width:200%;
+		position: absolute;
+		margin-top:30%;
+		animation-name: land;
+			animation-duration: 4s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+z-index:9;
+
+	}
+	.land1{
+		margin-top: 60%;
+		z-index: 8;
+	}
+.mountain{
+	
+	width: 230%;
+height: 19vw;
+	position: absolute;
+	margin-top: 13.9%;
+margin-left: -1%;
+animation-name: mountain;
+			animation-duration: 4s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+z-index: 5;
+}
+.farmountain{
+	width:230%;
+	height:17vw;
+	margin-top: 15%;
+margin-left: 12.7%;
+animation-name: farmountain;
+			animation-duration: 4s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+	position: absolute;
+	z-index: 4;
+}
+.trees{
+	width:400%;
+	position: absolute;
+	z-index: 10;
+	margin-top: 15.2%;
+	margin-left: 3%;
+	animation-name: trees;
+			animation-duration: 10s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+	position: absolute;
+}
+.cloudsparent{
+	background-color: rgba(0,0,0,0.0);
+	
+	width:100%;
+	height:75%;
+	margin-left:0.2%;
+	position: absolute;
+	animation-name: cloudsparent;
+			animation-duration: 40s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+	z-index: 1;
+}
+.clouds{
+	width:inherit;
+	height: 100%;
+		border:1px solid white;
+	position: absolute;
+	animation-name: clouds;
+			animation-duration: 40s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud1{
+	animation-name: cloud1;
+			animation-duration: 11s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8{
+	position: absolute;
+width:15%;
+margin-top: 3%;
+margin-left:120%;
+}
+.cloud2{
+	position: absolute;
+	width:9%;
+
+margin-top: 3%;
+animation-name: cloud1;
+			animation-duration: 12s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud3{
+	position: absolute;
+	width:5%;
+
+margin-top: 3%;
+animation-name: cloud1;
+			animation-duration: 13s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud4{
+width:10%;
+
+margin-top: 9%;
+animation-name: cloud1;
+			animation-duration: 11.5s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.cloud5{
+width:3%;
+
+margin-top: 13%;
+animation-name: cloud1;
+			animation-duration: 7s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud6{
+width:6%;
+
+margin-top: 2%;
+animation-name: cloud1;
+			animation-duration: 8s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud7{
+width:13%;
+
+margin-top: 4%;
+animation-name: cloud1;
+			animation-duration: 9s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud8{
+width:6%;
+
+margin-top: 11%;
+animation-name: cloud1;
+			animation-duration: 10s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+@keyframes ball{
+			0% {transform:rotate(0deg); }
+			
+			25%{transform:rotate(90deg);}
+			50%{transform:rotate(180deg); }
+		
+			100%{transform:rotate(360deg);}
+
+		}
+@keyframes ball2{
+			0%{transform:rotate(0deg); margin-top: 31%;}
+			
+			
+			40%{transform:rotate(180deg); margin-top: 5%;}
+			
+		
+			
+			81%{ margin-top: 31%; }
+			87.5%{ margin-top: 29%; }
+
+			100%{transform:rotate(360deg); margin-top: 31%;}
+
+		}
+.ball{
+width:5%;
+position: absolute;
+margin-top: 31%;
+z-index: 30;
+margin-left: 2%;
+animation-name: ball;
+
+			animation-duration: 0.8s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.ball2{
+	animation-name: ball2;
+
+			animation-duration: 1.2s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: 1;
+}
+
+.onss1{
+	width:10%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 23%;
+	
+}
+.secct{
+	width:10%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 21%;
+	
+}
+.faiwau{
+	width:10%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 20.5%;
+	
+}
+.uvew{
+	width:11%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 27.3%;
+
+}
+.bird{
+	position: absolute;
+	z-index: 29;
+	height: 10vw;
+	width:10vw;
+	margin-top:12%;
+}
+@keyframes birdgame{
+	from{opacity: 0;}
+	to{ opacity: 1; }
+}
+@keyframes birdgame1{
+	from{opacity: 1;}
+	to{ opacity: 0; }
+}
+
+.bird > img{
+	width: 8vw;
+position: absolute;
+}
+.bird > img:nth-of-type(2){
+margin-top:2.5vw;
+animation-name: birdgame;
+			animation-duration: 0.4s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.bird > img:nth-of-type(1){
+animation-name: birdgame1;
+			animation-duration: 0.4s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.obstacle{
+	animation-name: obstacle;
+			animation-duration: 3.5s;
+			margin-left:103%;
+			animation-delay: 0s;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.score{
+	width: 100%;
+	
+position: absolute;
+	z-index: 50;
+}
+.score span{
+	padding: 0.6% 3%;
+	text-align: center;
+	
+	border: 5px solid pink;
+	background: white;
+	color:black;
+	float: right;
+	font-family: sans-serif;
+	font-size: 25px;
+	border-radius: 10px;
+}
+.button{
+	position: absolute;
+	
+width: 100.5%;
+height:100%;
+z-index: 50;
+
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0,0,0,0.5);
+}
+.button button{
+	padding:2% 5%;
+font-size: 2vw;
+font-family: sans-serif;
+background-color: pink;
+color: white;
+
+border:7px solid white;
+}
+@media screen and (orientation:portrait){
+	*{
+		margin: 0;
+		padding:0;
+	}
+	.button button{
+	padding:2% 5%;
+font-size: 5vw;
+font-family: sans-serif;
+background-color: pink;
+color: white;
+
+border:4px solid white;
+}
+.score span{
+	padding: 0.6% 3%;
+	text-align: center;
+	
+	border: 3px solid pink;
+	background: white;
+	color:black;
+	float: right;
+	font-family: sans-serif;
+	font-size: 5vw;
+	border-radius: 10px;
+}
+	.bird > img{
+	width: 13vw;
+position: absolute;
+}
+.bird > img:nth-of-type(2){
+margin-top:3.7vw;
+}
+.bird{
+	position: absolute;
+	z-index: 29;
+	height: 13vw;
+	width:13vw;
+	margin-top:21%;
+}
+@keyframes ball{
+			0% {transform:rotate(0deg); }
+			
+			25%{transform:rotate(90deg);}
+			50%{transform:rotate(180deg);}
+			
+
+			100%{transform:rotate(360deg);}
+
+		}
+@keyframes ball2{
+			0% {transform:rotate(0deg);  margin-top: 60%;}
+			
+			
+			40%{transform:rotate(180deg); margin-top: 12%;}
+			81%{ margin-top: 60%; }
+			87.5%{ margin-top: 58%; }
+
+			100%{transform:rotate(360deg); margin-top: 60%;}
+
+		}
+	.ball{
+width:10%;
+
+margin-top: 60%;
+animation-name: ball;
+			animation-duration: 0.8s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.ball2{
+	animation-name: ball2;
+			animation-duration: 1.2s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: 1;
+}
+
+	.land,.land1{
+	width:350%;
+	margin-top:60%;
+}
+.land1{
+		margin-top: 80%;
+		z-index: 8;
+	}
+@keyframes land{
+		from{ margin-left: -0.1%; }
+		to { margin-left: -175%; }
+	}
+	.mountain{
+	
+	width: 309%;
+height: 26vw;
+	position: absolute;
+	margin-top:37.9%;
+}
+@keyframes mountain{
+		from{ margin-left: -1%; }
+		to { margin-left: -154.4%; }
+	}
+	.farmountain{
+	width:309%;
+	height:26vw;
+	margin-top: 38%;
+margin-left: 15.7%;
+}
+@keyframes farmountain{
+		from{ margin-left: 0%; }
+		to { margin-left: -185%; }
+	}
+	.trees{
+	width:650%;
+	position: absolute;
+	z-index: 10;
+	margin-top: 36.2%;
+	margin-left: 3%;
+}
+@keyframes trees{
+		from{ margin-left: 3%; }
+		to { margin-left: -504.9%; }
+}
+.onss1{
+	width:18%;
+	margin-top: 48%;
+position: absolute;
+	z-index: 29;
+	
+}
+.secct{
+	width:17%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 45%;
+	
+}
+.faiwau{
+	width:17%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 43.5%;
+	
+}
+.uvew{
+	width:20%;
+	position: absolute;
+	z-index: 29;
+	margin-top: 54%;
+
+}
+
+.obstacle{
+	animation-name: obstacle;
+			animation-duration: 2.5s;
+			margin-left: 103%;
+			animation-delay: 0s;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+
+	
+	.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8{
+	position: absolute;
+width:19%;
+margin-top: 6%;
+}
+.cloud2{
+	position: absolute;
+	width:13%;
+
+margin-top: 9%;
+animation-name: cloud1;
+			animation-duration: 12s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud3{
+	position: absolute;
+	width:9%;
+
+margin-top: 10%;
+animation-name: cloud1;
+			animation-duration: 13s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud4{
+width:18%;
+
+margin-top: 9%;
+animation-name: cloud1;
+			animation-duration: 11.5s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+}
+.cloud5{
+width:10%;
+
+margin-top: 8%;
+animation-name: cloud1;
+			animation-duration: 7s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud6{
+width:14%;
+
+margin-top: 2%;
+animation-name: cloud1;
+			animation-duration: 8s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud7{
+width:21%;
+
+margin-top: 9%;
+animation-name: cloud1;
+			animation-duration: 9s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.cloud8{
+width:13%;
+
+margin-top: 16%;
+animation-name: cloud1;
+			animation-duration: 10s;
+			
+			animation-delay: 0;
+			animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.clouds{
+padding-top: 7%;
+}
+}
+.obspar{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.ball,.land,.land1,.obstacle,.mountain,.farmountain,.trees,.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8{
+	animation-play-state: paused;
+}
+.body{
+	width:100.35%;
+	height: 100%;
+	position: absolute;
+
+
+}
+.obstacle1{margin-left: 103%;}	
+
+</style>
+<body>
+
+<div class="button"><button> Start Game </button></div>
+<div class="body"> <div class="cloudsparent">
+		<div class="clouds">
+		<img class="cloud1" src="cloud1game.png">
+		<img class="cloud2" src="cloud1game.png">
+<img class="cloud3" src="cloud2game.png">
+<img class="cloud4" src="cloud2game.png">
+<img class="cloud5" src="cloud1game.png">
+<img class="cloud6" src="cloud1game.png">
+<img class="cloud7" src="cloud2game.png">
+<img class="cloud8" src="cloud1game.png">
+		</div>
+	</div>
+	<div class="score"><span>0</span></div>
+	<img class="farmountain" src="farmountaingame.png">
+	<img class="mountain" src="mountaingame.png">
+	<img class="trees" src="treesgame.png">
+	<img class="ball" src="ballgame.png">
+	<div class="obspar">
+	<img class="onss1 obstacle1" src="obstaclegame.png">
+	</div>
+<img class="land" src="html game.png"><img class="land1" src="html game.png">  </div>
+	
+<script type="text/javascript" src="jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function (){
+		var bodyy = $("body").html();
+		var head = $("head").html();
+
+		var counter=0;
+		var score =0;
+		var b=0;
+		var a=0;
+	var u=0;
+var uu=0;
+
+
+var e = window.setInterval(changeobs,1);
+window.clearInterval(e);
+
+$("body").on("click",".button",function(){
+	// $(".obstacle").css("animation-play-state","running");
+$(".ball,.land,.land1,.mountain,.farmountain,.trees").css("animation-play-state","running");
+$(".cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8").css("animation-play-state","running");	
+e=window.setInterval(changeobs,1);
+// $(".obstacle").css("animation-play-state","running");
+
+$(this).remove();
+});
+$("body").on("dblclick",function(){
+window.clearInterval(e);
+$(".obstacle").css("animation-play-state","paused");
+$(".ball,.land,.mountain,.farmountain,.trees").css("animation-play-state","paused");
+$(".cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8").css("animation-play-state","paused");	
+$("body").prepend('<div class="button"><button> Continue Game </button></div>');
+});	
+	function changeobs(){
+		
+// $(".obstacle").css("animation-play-state","running");
+		a = Math.floor(Math.random()*6);
+b = parseInt($(".obspar>.obstacle1").offset().left);
+
+if( counter == 0){
+if( b >= parseInt($("body").width())){
+
+if(a==1){
+	$(".obspar").html('<img class="onss1 obstacle obstacle1" src="obstaclegame.png">');
+}
+if(a==2){
+$(".obspar").html('<img class="secct obstacle obstacle1" src="obstacle2game.png">');
+}
+if(a==3){
+$(".obspar").html('<img class="faiwau obstacle obstacle1" src="obstacle3game.png">');
+}
+if(a==4){
+$(".obspar").html('<img class="uvew obstacle obstacle1" src="obstacle4game.png">');
+}
+if(a==5){
+$(".obspar").html('<div class="bird obstacle obstacle1"><img src="birdgame.png"><img src="bird2game.png"></div>');
+}
+if(a==0){
+$(".obspar").html('<img class="faiwau obstacle obstacle1" src="obstaclegame.png">');
+}
+counter++;
+}
+
+	}
+	if( b < -10){
+counter=0;
+	}
+	if(($(".obstacle").offset().left + $(".obstacle").width())- ($(".ball").offset().left+$(".ball").width())>=-($(".ball").width()/2.2) && ($(".obstacle").offset().left + $(".obstacle").width())- ($(".ball").offset().left+$(".ball").width()) <=$(".obstacle").width()-($(".ball").width()/2.2)){
+if(($(".obstacle").offset().top + $(".obstacle").height())- ($(".ball").offset().top+$(".ball").height())>=-($(".ball").width()/2.2) && ($(".obstacle").offset().top + $(".obstacle").height())- ($(".ball").offset().top+$(".ball").height()) <=$(".obstacle").height()-($(".ball").width()/2.2)){
+	var scoore=$(".score>span").text();
+	$(".score>span").text("0");
+if(confirm("You failed!! and your score is "+scoore)){
+	$(".obstacle").css("animation-play-state","paused");
+	$("body").html(bodyy);
+	$("head").html(head);$("body").html(bodyy);
+	$("head").html(head);$("body").html(bodyy);
+	$("head").html(head);$("body").html(bodyy);
+	$("head").html(head);
+	$(".obstacle").css("animation-play-state","paused");
+	window.clearInterval(e);
+	uu=0;
+
+}
+else{
+	$(".obstacle").css("animation-play-state","paused");
+	$("body").html(bodyy);
+	$("head").html(head);
+$("body").html(bodyy);
+	$("head").html(head);$("body").html(bodyy);
+	$("head").html(head);
+	$(".obstacle").css("animation-play-state","paused");
+	window.clearInterval(e);
+uu=0;
+}
+	
+
+	}
+	}
+
+score++;
+if( score == 5){
+	var scoreval = $(".score>span").text();
+	scoreval = parseInt(scoreval);
+	scoreval = scoreval+1;
+	$(".score>span").text(scoreval);
+	score=0;
+}
+uu=uu+1;
+if(uu >= 700){
+$(".obstacle").css("animation-play-state","running");
+
+
+}
+
+
+}		
+
+
+$(".body").on("click",function(){
+$(".ball").addClass("ball2");
+
+setTimeout(function(){
+$(".ball").removeClass("ball2");
+},1200);
+});	
+
+	});
+
+</script>
+</body>
+</html>
